@@ -77,7 +77,7 @@ const logInController = async (req, res) => {
             refreshToken,
         };
 
-        return res.json({ tokens, user: userToReturn });
+        return res.json({ tokens, userDetails: userToReturn });
     } catch (error) {
         // on error return internal error
         console.log(error);
