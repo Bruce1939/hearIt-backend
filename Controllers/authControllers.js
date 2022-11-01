@@ -15,7 +15,7 @@ const signUpController = async (req, res) => {
         const userExists = await User.findOne({ email });
         if (userExists) return res.json({ error: "user already exists" });
 
-        // check is username is not taken
+        // check if username is not taken
         const usernameTaken = await User.findOne({ username });
         if (usernameTaken) return res.json({ error: "Username is in use" });
 
