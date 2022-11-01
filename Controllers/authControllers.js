@@ -64,7 +64,7 @@ const logInController = async (req, res) => {
         const accessToken = jwt.sign(payload, JWT_SECRET, { expiresIn: "1d" });
         const refreshToken = jwt.sign(payload, JWT_SECRET, { expiresIn: "7d" });
 
-        // prepare json response: user 
+        // prepare json response: user
         const userToReturn = {
             id: user._id,
             name: user.name,
