@@ -32,7 +32,7 @@ const userModel = new Schema({
         default: false
     },
     activationCode: {
-        type: Number,
+        type: String,
         default: 000000
     }
 },{
