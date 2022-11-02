@@ -296,6 +296,7 @@ const logInController = async (req, res) => {
 
         // check credentials against db data
         const user = await User.findOne({ email });
+        if(!user.isActive) return res.json({ error: "user is not activated" })
         if (!user) return res.json({ error: "user doesn't exists" });
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) return res.json({ error: "invalid credentials" });
