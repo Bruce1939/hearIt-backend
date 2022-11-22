@@ -5,6 +5,7 @@ const cors = require("cors");
 const connectDB = require("./config/connectDB");
 
 const authRoutes = require("./routes/authRoutes");
+const { PORT } = require("./Constants");
 
 const app = express();
 
@@ -14,7 +15,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
 connectDB();
 
-app.listen(process.env.PORT || 5000, () =>
+app.listen(PORT || 5000, () =>
     console.log(`server started on port ${process.env.PORT || 5000}`)
 );
 
